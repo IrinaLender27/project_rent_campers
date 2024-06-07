@@ -1,5 +1,5 @@
 import { Footer } from "../../moduls/footer/Footer/Footer";
-import { Header } from "../../moduls/header/components/Header";
+import { Header } from "../../moduls/header/components/Header/Header";
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 

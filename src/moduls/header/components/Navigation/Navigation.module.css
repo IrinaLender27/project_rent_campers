@@ -1,0 +1,11 @@
+.navigation {
+  display: flex;
+}
+.navigationList {
+  display: flex;
+  gap: 20px;
+}
+.navigationItems {
+  display: flex;
+  gap: 20px;
+}
