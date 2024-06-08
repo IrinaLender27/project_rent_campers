@@ -1,9 +1,19 @@
-import { instance } from "./instance";
+import axios from "axios";
+import { BASE_URL } from "../constans/constans";
 
-export const getAdverts = async () => {
+export const api = axios.create({
+  baseURL: BASE_URL,
+  headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json",
+  },
+});
+
+export const fetchAdverts = async () => {
   try {
-    const { data } = await instance.get("/");
-    return data;
+    const response = await api.get("/");
+    console.log(response.data);
+    return response.data;
   } catch (error) {
     error;
   }

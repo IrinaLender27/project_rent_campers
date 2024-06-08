@@ -1,0 +1,16 @@
+@keyframes changeImage {
+  0% {
+    background-image: url("../../../../assets/icons/icon.png");
+  }
+
+  100% {
+    background-image: url("../../../../assets/icons/icon2.png");
+  }
+}
+
+.imageContainer {
+  width: 28px;
+  height: 28px;
+  background-repeat: no-repeat;
+  animation: changeImage 1.5s infinite;
+}
