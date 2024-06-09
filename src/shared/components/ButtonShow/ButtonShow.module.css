@@ -1,0 +1,15 @@
+.buttonShow {
+  display: flex;
+  padding: 16px 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 200px;
+  background: #e44848;
+}
+.text {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.08px;
+}

@@ -12,7 +12,6 @@ export const api = axios.create({
 export const fetchAdverts = async () => {
   try {
     const response = await api.get("/");
-    console.log(response.data);
     return response.data;
   } catch (error) {
     error;

@@ -1,0 +1,27 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px; /* Adjust width as needed */
+  height: 80px; /* Adjust height as needed */
+  border: 2px solid #d9d9d9;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button:hover {
+  border-color: orange;
+}
+.checkbox {
+  display: none;
+}
+.name {
+  display: block;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  pointer-events: none;
+}
+.checkbox:checked + .name {
+  border: 2px solid #ff9800; /* Orange border when checked */
+}

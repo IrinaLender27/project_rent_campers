@@ -1,6 +1,7 @@
 import { Route, Routes, Navigate } from "react-router-dom";
-import { CatalogPage, HomePage, FavoritesPage } from "./pages";
+import { HomePage, FavoritesPage } from "./pages";
 import SharedLayout from "./shared/components/SharedLayout";
+import CatalogPage from "./pages/CatalogPage/CatalogPage";
 
 export const App = () => {
   return (

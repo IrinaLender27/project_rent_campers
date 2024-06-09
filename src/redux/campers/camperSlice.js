@@ -13,19 +13,21 @@ export const getCampers = createAsyncThunk(
   }
 );
 
+const initialState = {
+  campers: [],
+  filterCampers: [],
+  loading: false,
+  error: null,
+  filters: {
+    location: "",
+    equipment: [],
+    type: "",
+  },
+};
+
 const campersSlice = createSlice({
   name: "campers",
-  initialState: {
-    campers: [],
-    filterCampers: [],
-    loading: false,
-    error: null,
-    filters: {
-      location: "",
-      equipment: [],
-      type: "",
-    },
-  },
+  initialState,
   reducers: {
     setFilter: (state, { payload }) => {
       state.filters = { ...state.filters, ...payload };
@@ -43,6 +45,10 @@ const campersSlice = createSlice({
           camper.form.toLowerCase() === state.filters.type.toLowerCase();
         return locationMatch && equipmentMatch && typeMatch;
       });
+    },
+    resetFilters: (state) => {
+      state.filters = initialState.filters;
+      state.filterCampers = state.campers;
     },
   },
   extraReducers: (builder) => {
@@ -62,5 +68,5 @@ const campersSlice = createSlice({
       });
   },
 });
-export const { setFilter } = campersSlice.actions;
+export const { setFilter, resetFilters } = campersSlice.actions;
 export const campersReducer = campersSlice.reducer;
