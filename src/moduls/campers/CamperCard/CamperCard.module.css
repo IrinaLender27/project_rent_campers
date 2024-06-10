@@ -1,6 +1,7 @@
 .image {
   object-fit: cover;
   margin-right: 24px;
+  border-radius: 10px;
 }
 .card {
   display: flex;

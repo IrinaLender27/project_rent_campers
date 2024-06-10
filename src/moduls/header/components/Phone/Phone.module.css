@@ -14,3 +14,10 @@
   background-repeat: no-repeat;
   animation: changeImage 1.5s infinite;
 }
+.phoneContact {
+  display: flex;
+  gap: 10px;
+}
+.numberForDesk {
+  color: var(--color-dark);
+}

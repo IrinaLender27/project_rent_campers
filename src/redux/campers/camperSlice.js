@@ -18,6 +18,7 @@ const initialState = {
   filterCampers: [],
   loading: false,
   error: null,
+  favorite: [],
   filters: {
     location: "",
     equipment: [],
@@ -29,6 +30,12 @@ const campersSlice = createSlice({
   name: "campers",
   initialState,
   reducers: {
+    setFavorites: (state, { payload }) => {
+      const add = state.campers.find((camper) => camper._id === payload._id);
+      if (add) {
+        state.favorite.push(add);
+      }
+    },
     setFilter: (state, { payload }) => {
       state.filters = { ...state.filters, ...payload };
       state.filteredAdverts = state.campers.filter((camper) => {

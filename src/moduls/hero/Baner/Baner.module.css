@@ -1,10 +1,25 @@
 .banerThumb {
-  width: 100%; /* Ширина контейнера */
-  height: 700px; /* Висота контейнера */
-  overflow: hidden; /* Обрізання вмісту, що виходить за межі контейнера */
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  object-fit: cover;
+  margin-bottom: 24px;
 }
 .baner {
-  width: 100%; /* Ширина зображення відповідає ширині контейнера */
-  height: 100%; /* Висота зображення відповідає висоті контейнера */
-  object-fit: cover; /* Зображення заповнює контейнер, зберігаючи свої пропорції */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.topOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
 }

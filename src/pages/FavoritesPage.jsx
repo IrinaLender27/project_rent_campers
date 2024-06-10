@@ -1,7 +1,13 @@
+import { Container } from "../shared/components/Container/Container";
+
 export default function FavoritesPage() {
   return (
     <div>
-      <p>Favorites page</p>
+      <Container>
+        <div>
+          <p>hello</p>
+        </div>
+      </Container>
     </div>
   );
 }

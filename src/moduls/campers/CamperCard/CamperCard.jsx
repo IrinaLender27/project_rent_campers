@@ -74,7 +74,7 @@ export const CamperCard = ({ camper }) => {
         <ButtonShow text={"Show more"} onClick={openModal} />
       </div>
       <BaseModal isOpen={isOpen} onClose={closeModal}>
-        <Modal />
+        <Modal camper={camper} />
       </BaseModal>
     </div>
   );

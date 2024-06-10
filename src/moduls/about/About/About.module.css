@@ -1,0 +1,13 @@
+.aboutSection {
+  display: flex;
+  gap: 70px;
+}
+.img {
+  border-radius: 10px;
+}
+.text {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px; /* 120% */
+  align-content: center;
+}

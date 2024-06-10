@@ -1,2 +1,3 @@
-export { default as LogoImg } from "./logo.png";
-export { default as BanerImg } from "./baner.jpg";
+export { default as LogoImg } from "./logo.jpg";
+export { default as BanerImg } from "./baner1.jpg";
+export { default as AboutImg } from "./people.jpg";
