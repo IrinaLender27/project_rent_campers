@@ -28,8 +28,8 @@ export const Modal = ({ camper }) => {
       );
     } else if (activTab === "reviews") {
       return (
-        <div>
-          <Reviews />
+        <div className={css.featuresContainer}>
+          <Reviews reviews={camper.reviews} />
           <BookForm onSubmit={handleBookingSubmit} />
         </div>
       );

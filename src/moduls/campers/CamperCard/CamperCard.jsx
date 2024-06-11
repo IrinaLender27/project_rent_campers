@@ -1,5 +1,4 @@
 import css from "./CamperCard.module.css";
-import PropTypes from "prop-types";
 import { sprite } from "../../../assets/icons";
 import { ButtonShow } from "../../../shared/components/ButtonShow/ButtonShow";
 import { BaseModal } from "../../../shared/components/BaseModal/BaseModal";
@@ -44,15 +43,16 @@ export const CamperCard = ({ camper }) => {
           <h2 className={css.title}>{camper.name}</h2>
           <div className={css.favorite}>
             <p className={css.price}>€{camper.price}.00</p>
-            <button
-              className={`${css.favoriteButton} ${
-                isFavorite ? css.favoriteActive : ""
-              }`}
-              onClick={toggleFavorite}
-            >
-              <svg className={css.svg} width="20" height="20">
-                <use xlinkHref={`${sprite}#icon-heart`}></use>
-              </svg>
+            <button onClick={toggleFavorite}>
+              {!isFavorite ? (
+                <svg className={css.svg} width="20" height="20">
+                  <use xlinkHref={`${sprite}#icon-heart`}></use>
+                </svg>
+              ) : (
+                <svg className={css.svg} width="20" height="20">
+                  <use xlinkHref={`${sprite}#icon-red`}></use>
+                </svg>
+              )}
             </button>
           </div>
         </div>
@@ -83,21 +83,4 @@ export const CamperCard = ({ camper }) => {
       </BaseModal>
     </div>
   );
-};
-CamperCard.propTypes = {
-  camper: PropTypes.shape({
-    image: PropTypes.string,
-    name: PropTypes.string,
-    description: PropTypes.string,
-    location: PropTypes.string,
-    price: PropTypes.number,
-    gallery: PropTypes.array,
-    adults: PropTypes.number,
-    transmission: PropTypes.string,
-    engine: PropTypes.string,
-    rating: PropTypes.string,
-    reviews: PropTypes.array,
-    kitchen: PropTypes.number,
-    details: PropTypes.object,
-  }).isRequired,
 };

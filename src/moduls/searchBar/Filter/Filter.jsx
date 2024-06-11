@@ -10,7 +10,7 @@ export const Filter = () => {
   const dispatch = useDispatch();
   const filters = useSelector(selectFilter);
   const { location, equipment, type } = filters;
-  console.log(filters);
+
   useEffect(() => {
     dispatch(resetFilters());
   }, [dispatch]);

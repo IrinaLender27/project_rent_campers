@@ -7,16 +7,18 @@ import {
 import { Container } from "../../shared/components/Container/Container";
 import { Filter } from "../../moduls/searchBar/Filter/Filter";
 import { CampersList } from "../../moduls/campers/CampersList/CampersList";
+import { Loading } from "../../shared/components/Loading";
 export default function CatalogPage() {
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
+
   return (
     <div>
       <Container>
+        {loading && <Loading />}
+        {error && <p>Error oops</p>}
         <div className={css.catalog}>
           <Filter />
-          {loading && <p>Loading</p>}
-          {error && <p>Error oops</p>}
           <CampersList />
         </div>
       </Container>

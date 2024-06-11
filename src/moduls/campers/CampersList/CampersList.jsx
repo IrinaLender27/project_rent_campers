@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  // selectCampersFilter,
-  selectorCamper,
-} from "../../../redux/campers/campersSelector";
+import { selectCamper } from "../../../redux/campers/campersSelector";
 import { getCampers } from "../../../redux/campers/operations";
 import { CamperCard } from "../CamperCard/CamperCard";
 import css from "./CampersList.module.css";
@@ -14,7 +11,7 @@ export const CampersList = () => {
   const dispatch = useDispatch();
 
   // const campersFilter = useSelector(selectCampersFilter);
-  const campers = useSelector(selectorCamper);
+  const campers = useSelector(selectCamper);
   useEffect(() => {
     dispatch(getCampers());
   }, [dispatch]);

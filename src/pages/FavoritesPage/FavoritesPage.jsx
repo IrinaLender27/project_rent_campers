@@ -22,9 +22,9 @@ export default function FavoritesPage() {
             />
           </div>
         ) : (
-          <ul>
+          <ul className={css.list}>
             {favorits.map((camper) => (
-              <li key={camper.id}>
+              <li key={camper._id}>
                 <CamperCard camper={camper} />
               </li>
             ))}

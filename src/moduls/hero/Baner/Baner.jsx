@@ -9,6 +9,10 @@ export const Baner = () => {
         <img src={BanerImg} className={css.baner} alt="camper" />
         <div className={css.topOverlay}></div>
       </div>
+      <h1 className={css.mainTittle}>
+        {" "}
+        Take your home on a trip - rent campers
+      </h1>
     </section>
   );
 };

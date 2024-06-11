@@ -1,6 +1,6 @@
 import { BoxEquipment } from "../../../shared/components/BoxEquipment/BobEquipment";
 import css from "./Equipment.module.css";
-import PropTypes from "prop-types";
+
 export const Equipment = ({ camper }) => {
   return (
     <div className={css.details}>
@@ -23,21 +23,4 @@ export const Equipment = ({ camper }) => {
       />
     </div>
   );
-};
-Equipment.propTypes = {
-  camper: PropTypes.shape({
-    image: PropTypes.string,
-    name: PropTypes.string,
-    description: PropTypes.string,
-    location: PropTypes.string,
-    price: PropTypes.number,
-    gallery: PropTypes.array,
-    adults: PropTypes.number,
-    transmission: PropTypes.string,
-    engine: PropTypes.string,
-    rating: PropTypes.string,
-    reviews: PropTypes.array,
-    kitchen: PropTypes.number,
-    details: PropTypes.object,
-  }).isRequired,
 };

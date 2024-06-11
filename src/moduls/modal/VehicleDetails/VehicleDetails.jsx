@@ -3,8 +3,9 @@ import PropTypes from "prop-types";
 
 export const VehicleDetails = ({ details }) => {
   return (
-    <div className={css.vehicleDetails}>
+    <div className={css.vehicleBox}>
       <h3 className={css.title}>Vehicle details</h3>
+      <div className={css.vehicleDetails}></div>
       <div className={css.detailsContainer}>
         <div className={css.detailItem}>
           <span className={css.detailKey}>Form</span>

@@ -1,8 +1,10 @@
 .vehicleDetails {
-  padding: 20px;
+  padding: 24px;
   border-top: 1px solid #e0e0e0;
 }
-
+.vehicleBox {
+  margin-top: 44px;
+}
 .title {
   font-size: 1.25rem;
   font-weight: bold;
@@ -23,9 +25,14 @@
 }
 
 .detailKey {
-  font-weight: bold;
+  color: #101828;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px; /* 133.333% */
 }
 
 .detailValue {
   text-align: right;
+  color: #101828;
 }

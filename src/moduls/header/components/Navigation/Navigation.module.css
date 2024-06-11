@@ -6,19 +6,19 @@
 }
 .navigationItems {
   display: flex;
-  gap: 50px;
+  gap: 60px;
   padding-top: 5px;
   padding-bottom: 5px;
 }
 .link {
   color: var(--color-dark);
-  font-size: 24px;
-  font-weight: 400;
+  font-size: 30px;
+  font-weight: 500;
   line-height: 30px; /* 125% */
 }
 
 .active {
   border: 1px solid #e44848;
   border-radius: 200px;
-  padding: 3px 17px;
+  padding: 4px 20px;
 }
