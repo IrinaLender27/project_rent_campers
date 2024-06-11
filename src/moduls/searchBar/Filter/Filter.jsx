@@ -5,7 +5,7 @@ import { selectFilter } from "../../../redux/campers/campersSelector";
 import { setFilter, resetFilters } from "../../../redux/campers/camperSlice";
 import { useEffect } from "react";
 import { sprite } from "../../../assets/icons";
-
+import { ButtonShow } from "../../../shared/components/ButtonShow/ButtonShow";
 export const Filter = () => {
   const dispatch = useDispatch();
   const filters = useSelector(selectFilter);
@@ -175,11 +175,10 @@ export const Filter = () => {
           </lable>
         </div>
       </div>
-      <button
+      <ButtonShow
         onClick={() => dispatch(setFilter({ location, equipment, type }))}
-      >
-        Search
-      </button>
+        text={"Sarch"}
+      />
     </div>
   );
 };

@@ -1,0 +1,11 @@
+.message {
+  color: #d84343;
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 30px; /* 125% */
+  text-align: center;
+  margin-top: 60px;
+}
+.photo {
+  margin: 0 auto;
+}

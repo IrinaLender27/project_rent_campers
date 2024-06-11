@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { sprite } from "../../../assets/icons";
 import css from "./BaseModal.module.css";
 import Modal from "react-modal";
 
@@ -11,7 +12,16 @@ export const BaseModal = ({ isOpen, onClose, children }) => {
       ariaHideApp={false}
       overlayClassName={css.overlay}
     >
-      <div onClick={() => onClose()}></div>
+      <button className={css.button} onClick={() => onClose()}>
+        <svg
+          className={css.svg}
+          width="32"
+          height="32"
+          style={{ fill: "none", stroke: "var(--color-dark)" }}
+        >
+          <use xlinkHref={`${sprite}#icon-close`}></use>
+        </svg>
+      </button>
       {children}
     </Modal>
   );

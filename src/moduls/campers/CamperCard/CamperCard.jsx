@@ -1,15 +1,35 @@
 import css from "./CamperCard.module.css";
 import PropTypes from "prop-types";
 import { sprite } from "../../../assets/icons";
-import { BoxEquipment } from "../../../shared/components/BoxEquipment/BobEquipment";
 import { ButtonShow } from "../../../shared/components/ButtonShow/ButtonShow";
 import { BaseModal } from "../../../shared/components/BaseModal/BaseModal";
 import { useState } from "react";
 import { Modal } from "../../modal/Modal/Modal";
+import { Equipment } from "../Equipment/Equipment";
+import { useDispatch, useSelector } from "react-redux";
+import { selectFavorits } from "../../../redux/campers/campersSelector";
+import {
+  deleteFavorites,
+  setFavorites,
+} from "../../../redux/campers/camperSlice";
+
 export const CamperCard = ({ camper }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const favorites = useSelector(selectFavorits);
+  const dispatch = useDispatch();
+
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
+
+  const isFavorite = favorites.some((favorit) => favorit._id === camper._id);
+  const toggleFavorite = () => {
+    if (isFavorite) {
+      dispatch(deleteFavorites(camper._id));
+    } else {
+      dispatch(setFavorites(camper));
+    }
+  };
+
   return (
     <div className={css.card}>
       <img
@@ -24,7 +44,12 @@ export const CamperCard = ({ camper }) => {
           <h2 className={css.title}>{camper.name}</h2>
           <div className={css.favorite}>
             <p className={css.price}>€{camper.price}.00</p>
-            <button className={css.favoriteButton}>
+            <button
+              className={`${css.favoriteButton} ${
+                isFavorite ? css.favoriteActive : ""
+              }`}
+              onClick={toggleFavorite}
+            >
               <svg className={css.svg} width="20" height="20">
                 <use xlinkHref={`${sprite}#icon-heart`}></use>
               </svg>
@@ -50,27 +75,7 @@ export const CamperCard = ({ camper }) => {
         <p className={css.description}>
           {camper.description.substring(0, 100)}...
         </p>
-        <div className={css.details}>
-          <BoxEquipment
-            className={css.fill}
-            text={`${camper.adults} adults`}
-            icon={`#icon-children`}
-          />
-          <BoxEquipment text={camper.transmission} icon={`#icon-avtomat`} />
-          <BoxEquipment text={camper.engine} icon={`#icon-petrol`} />
-          <BoxEquipment
-            text={`${camper.details.kitchen} Kitchen`}
-            icon={`#icon-kitchen`}
-          />
-          <BoxEquipment
-            text={` ${camper.details.beds} Beds`}
-            icon={`#icon-bed`}
-          />
-          <BoxEquipment
-            text={` ${camper.details.airConditioner} AC`}
-            icon={`#icon-conditioner`}
-          />
-        </div>
+        <Equipment camper={camper} />
         <ButtonShow text={"Show more"} onClick={openModal} />
       </div>
       <BaseModal isOpen={isOpen} onClose={closeModal}>

@@ -4,14 +4,13 @@ import {
   // selectCampersFilter,
   selectorCamper,
 } from "../../../redux/campers/campersSelector";
-import { getCampers } from "../../../redux/campers/camperSlice";
+import { getCampers } from "../../../redux/campers/operations";
 import { CamperCard } from "../CamperCard/CamperCard";
 import css from "./CampersList.module.css";
 import { CAMPERS_PER_PAGE } from "../../../shared/constans/constans";
 
 export const CampersList = () => {
   const [visibleCampers, setVisibleCampers] = useState(CAMPERS_PER_PAGE);
-
   const dispatch = useDispatch();
 
   // const campersFilter = useSelector(selectCampersFilter);

@@ -36,3 +36,8 @@
     opacity: 1;
   }
 }
+.button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}

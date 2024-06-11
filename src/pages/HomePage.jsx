@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <div>
       <Container>
-        <Animation />
+        {/* <Animation /> */}
         <Baner />
         <About />
       </Container>

@@ -1,24 +1,13 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { fetchAdverts } from "../../shared/api/adverts";
+import { createSlice } from "@reduxjs/toolkit";
 
-export const getCampers = createAsyncThunk(
-  "campers/getCampers",
-  async (_, { rejectWithValue }) => {
-    try {
-      const data = await fetchAdverts();
-      return data;
-    } catch ({ response }) {
-      return rejectWithValue(response.data);
-    }
-  }
-);
+import { getCampers } from "./operations";
 
 const initialState = {
   campers: [],
   filterCampers: [],
+  favorite: JSON.parse(localStorage.getItem("favorites")) || [],
   loading: false,
   error: null,
-  favorite: [],
   filters: {
     location: "",
     equipment: [],
@@ -34,7 +23,17 @@ const campersSlice = createSlice({
       const add = state.campers.find((camper) => camper._id === payload._id);
       if (add) {
         state.favorite.push(add);
+        localStorage.setItem("favorites", JSON.stringify(state));
       }
+    },
+    deleteFavorites: (state, { payload }) => {
+      const index = state.favorite.findIndex(
+        (camper) => camper._id === payload
+      );
+      if (index !== -1) {
+        state.favorite.splice(index, 1);
+      }
+      localStorage.setItem("favorites", JSON.stringify(state));
     },
     setFilter: (state, { payload }) => {
       state.filters = { ...state.filters, ...payload };
@@ -75,5 +74,6 @@ const campersSlice = createSlice({
       });
   },
 });
-export const { setFilter, resetFilters } = campersSlice.actions;
+export const { setFilter, resetFilters, setFavorites, deleteFavorites } =
+  campersSlice.actions;
 export const campersReducer = campersSlice.reducer;
