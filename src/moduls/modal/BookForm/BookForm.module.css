@@ -15,7 +15,7 @@
   width: 400px;
   border: none;
   border-radius: 10px;
-  background: var(--Inputs, #f7f7f7);
+  background: var(--color-lightbluegrey);
   font-size: 16px;
   font-weight: 400;
   line-height: 20px; /* 125% */
@@ -26,7 +26,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 200px;
-  background: #e44848;
+  background: var(--color-red);
   color: #fff;
   font-size: 16px;
   font-weight: 500;
@@ -34,17 +34,17 @@
   letter-spacing: -0.08px;
 }
 .error {
-  color: #e44848;
+  color: var(--color-red);
 }
 .tittle {
   margin-bottom: 8px;
-  color: #101828;
+  color: var(--color-dark);
   font-size: 20px;
   font-weight: 600;
   line-height: 24px; /* 120% */
 }
 .coment {
-  color: var(#475467);
+  color: var(--color-grey);
   font-size: 16px;
   font-weight: 400;
   line-height: 24px; /* 150% */

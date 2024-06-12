@@ -54,7 +54,7 @@
 }
 .description {
   margin-bottom: 24px;
-  color: #475467;
+  color: var(--color-grey);
 }
 .details {
   margin-bottom: 24px;

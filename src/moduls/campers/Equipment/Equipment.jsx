@@ -8,7 +8,7 @@ export const Equipment = ({ camper }) => {
         className={css.fill}
         text={`${camper.adults} adults`}
         icon={`#icon-children`}
-        style={{ stroke: "var(--color-dark)" }}
+        style={{ stroke: "black" }}
       />
       <BoxEquipment text={camper.transmission} icon={`#icon-avtomat`} />
       <BoxEquipment text={camper.engine} icon={`#icon-petrol`} />

@@ -10,10 +10,12 @@ export const Filter = () => {
   const dispatch = useDispatch();
   const filters = useSelector(selectFilter);
   const { location, equipment, type } = filters;
+  console.log(filters);
 
   useEffect(() => {
     dispatch(resetFilters());
   }, [dispatch]);
+
   const handleLocation = (e) => {
     dispatch(setFilter({ location: e.target.value }));
   };
@@ -25,8 +27,8 @@ export const Filter = () => {
     dispatch(setFilter({ equipment: newEquipment }));
   };
 
-  const handleType = (e) => {
-    dispatch(setFilter({ type: e.target.value }));
+  const handleType = (event) => {
+    dispatch(setFilter({ type: event.target.value }));
   };
   return (
     <div className={css.searchBar}>

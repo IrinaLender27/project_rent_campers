@@ -2,19 +2,19 @@
 
 @font-face {
   font-family: "Inter";
-  src: url("/Inter-Regular.ttf");
+  src: url("/public/Inter-Regular.ttf");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Inter";
-  src: url("/Inter-Medium.ttf");
+  src: url("/public/Inter-Medium.ttf");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "Inter";
-  src: url("/Inter-SemiBold.ttf");
+  src: url("/public/Inter-SemiBold.ttf");
   font-weight: 600;
   font-style: normal;
 }
@@ -22,7 +22,9 @@
   --color-dark: #101828;
   --color-grey: #475467;
   --color-red: #e44848;
+  --dark-red: #d84343;
   --color-yellow: #ffc531;
+  --color-orange: #ef8200;
   --color-lightbluegrey: #f2f4f7;
   --color-lightgrey: #f7f7f7;
 }

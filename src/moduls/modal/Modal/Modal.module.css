@@ -42,10 +42,10 @@
 }
 .description {
   margin-bottom: 44px;
-  color: #475467;
+  color: var(--color-grey);
 }
 .tabButton {
-  color: #101828;
+  color: var(--color-dark);
   font-size: 20px;
   font-weight: 600;
   line-height: 24px; /* 120% */
@@ -72,7 +72,7 @@
 .active::after {
   content: "";
   width: 85px;
-  border: 5px solid red;
+  border: 5px solid var(--color-red);
   position: absolute;
   left: 0;
   bottom: -27px;

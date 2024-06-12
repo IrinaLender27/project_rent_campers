@@ -1,5 +1,5 @@
 .filled {
-  color: #ffc531;
+  color: var(--color-yellow);
   width: 16px;
   height: 16px;
 }

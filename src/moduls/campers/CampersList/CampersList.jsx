@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectCamper } from "../../../redux/campers/campersSelector";
+import {
+  selectCamper,
+  selectCampersFilter,
+} from "../../../redux/campers/campersSelector";
 import { getCampers } from "../../../redux/campers/operations";
 import { CamperCard } from "../CamperCard/CamperCard";
 import css from "./CampersList.module.css";
@@ -10,7 +13,8 @@ export const CampersList = () => {
   const [visibleCampers, setVisibleCampers] = useState(CAMPERS_PER_PAGE);
   const dispatch = useDispatch();
 
-  // const campersFilter = useSelector(selectCampersFilter);
+  const campersFilter = useSelector(selectCampersFilter);
+  console.log(campersFilter);
   const campers = useSelector(selectCamper);
   useEffect(() => {
     dispatch(getCampers());

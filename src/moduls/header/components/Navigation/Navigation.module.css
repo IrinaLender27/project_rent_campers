@@ -6,7 +6,7 @@
 }
 .navigationItems {
   display: flex;
-  gap: 60px;
+  gap: 100px;
   padding-top: 5px;
   padding-bottom: 5px;
 }
@@ -18,7 +18,7 @@
 }
 
 .active {
-  border: 1px solid #e44848;
+  border: 1px solid var(--color-red);
   border-radius: 200px;
   padding: 4px 20px;
 }

@@ -88,9 +88,7 @@ export const Modal = ({ camper }) => {
             ""
           )}
         </div>
-        <p className={css.description}>
-          {camper.description.substring(0, 200)}...
-        </p>
+        <p className={css.description}>{camper.description}</p>
         <div className={css.buttonInfo}>
           <span className={css.line}></span>
           <button
